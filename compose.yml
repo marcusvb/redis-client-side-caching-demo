@@ -1,0 +1,11 @@
+services:
+  redis:
+    image: redis:7.4
+    ports:
+      - "6379:6379"
+    command: redis-server /usr/local/etc/redis/redis.conf
+    volumes:
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
+
+# enable this property in redis when started
+# redis-cli CONFIG SET notify-keyspace-events E$
